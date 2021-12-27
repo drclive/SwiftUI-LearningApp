@@ -19,7 +19,7 @@ class ContentModel: ObservableObject{
     func getLocalData(){
         
         ParseJSON()
-        ParseHTML()
+        //ParseHTML()
     }
     func ParseJSON(){
         
@@ -40,10 +40,9 @@ class ContentModel: ObservableObject{
            print(error)
        }
        //Return an empty recipe list
-        modules =  [Module]()
+        //modules =  [Module]()
     }
     func ParseHTML(){
-        
         //Parse the HTML style data
         let styleURL = Bundle.main.url(forResource: "style", withExtension: "html")
         //Create data object
