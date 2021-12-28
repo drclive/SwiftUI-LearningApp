@@ -18,12 +18,20 @@ struct ContentView: View {
                 if model.currentModule != nil {
                     ForEach(0..<model.currentModule!.content.lessons.count){ index in
                         let lesson = model.currentModule!.content.lessons[index]
-                        ContentViewRow(index: index, title: lesson.title, duration: lesson.duration)
+                        NavigationLink {
+                            ContentDetailView()
+                                .onAppear {
+                                    model.beginLesson(index)
+                                }
+                        } label: {
+                            ContentViewRow(index: index, title: lesson.title, duration: lesson.duration)
+                        }
                     }
                 }
             }
             .padding()
             .navigationTitle("Learn \(model.currentModule?.category ?? "")")
+            .buttonStyle(PlainButtonStyle())
         }
     }
 }

@@ -15,6 +15,10 @@ class ContentModel: ObservableObject{
     @Published var currentModule: Module?
     var currentModuleIndex = 0
     
+    //Current Lesson
+    @Published var currentLesson: Lesson?
+    var currentLessonIndex = 0
+    
     var styleData: Data?
 
     init(){
@@ -25,7 +29,7 @@ class ContentModel: ObservableObject{
     func getLocalData(){
         
         ParseJSON()
-        //ParseHTML()
+        ParseHTML()
     }
     func ParseJSON(){
         
@@ -77,4 +81,52 @@ class ContentModel: ObservableObject{
         currentModule = modules[currentModuleIndex]
     }
     
+    func beginLesson(_ LessonIndex:Int){
+        
+        if LessonIndex < currentModule!.content.lessons.count{
+            currentLessonIndex = LessonIndex
+        }else {
+            currentLessonIndex = 0
+        }
+        currentLesson = currentModule!.content.lessons[LessonIndex]
+    }
+    
+    func hasNextLesson() -> Bool {
+       
+        return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
+    }
+    
+    func nextLesson(){
+        
+        //Advance the Lesson
+        currentLessonIndex += 1
+        
+        //Check that it is within range
+        if currentLessonIndex < currentModule!.content.lessons.count{
+            //Ser the current lesson property
+            currentLesson = currentModule!.content.lessons[currentLessonIndex]
+        }
+        else{
+            
+            currentLesson = nil
+            currentLessonIndex = 0
+        }
+    }
+    
+    func addStyling(_ htmlString: String) -> NSAttributedString {
+        
+        var resultString = NSAttributedString()
+        var data = Data()
+        
+        //Add the styling data
+        if styleData != nil {
+            data.append(self.styleData!)
+        }
+        data.append(Data(htmlString.utf8))
+        
+        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+            resultString = attributedString
+        }
+        return resultString
+    }
 }
