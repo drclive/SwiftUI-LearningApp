@@ -26,13 +26,9 @@ struct ContentDetailView: View {
             }
             let htmlExplanation = model.currentModule!.content.lessons[model.currentLessonIndex].explanation
             
-            
-            
             //Description
             if htmlExplanation != ""{
                 HTMLStringView(htmlContent: htmlExplanation)
-                //let attString = model.addStyling(htmlExplanation)
-                //HTMLStringView(htmlContent: attString.string)
             }
             
             if model.hasNextLesson(){

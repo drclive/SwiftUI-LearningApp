@@ -8,7 +8,6 @@
 import WebKit
 import SwiftUI
 
-
 struct HTMLStringView: UIViewRepresentable {
     let htmlContent: String
 
