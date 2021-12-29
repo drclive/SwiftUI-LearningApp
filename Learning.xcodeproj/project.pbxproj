@@ -20,6 +20,7 @@
 		2192699F277B722900EBB812 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2192699E277B722900EBB812 /* AVKit.framework */; };
 		219269A1277B73DF00EBB812 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219269A0277B73DF00EBB812 /* GlobalConstants.swift */; };
 		219269A5277B954700EBB812 /* HTMLStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219269A4277B954600EBB812 /* HTMLStringView.swift */; };
+		219269C3277CCB7B00EBB812 /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219269C2277CCB7B00EBB812 /* RectangleCard.swift */; };
 		21A620DD277A60A9007C6DDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A620DC277A60A9007C6DDF /* ContentView.swift */; };
 		21A620DF277A773C007C6DDF /* ContentViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A620DE277A773C007C6DDF /* ContentViewRow.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		2192699E277B722900EBB812 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		219269A0277B73DF00EBB812 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		219269A4277B954600EBB812 /* HTMLStringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLStringView.swift; sourceTree = "<group>"; };
+		219269C2277CCB7B00EBB812 /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
 		21A620DC277A60A9007C6DDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		21A620DE277A773C007C6DDF /* ContentViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				21A620DE277A773C007C6DDF /* ContentViewRow.swift */,
 				2192699B277B6E0F00EBB812 /* ContentDetailView.swift */,
 				219269A4277B954600EBB812 /* HTMLStringView.swift */,
+				219269C2277CCB7B00EBB812 /* RectangleCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				219269A5277B954700EBB812 /* HTMLStringView.swift in Sources */,
 				21A620DF277A773C007C6DDF /* ContentViewRow.swift in Sources */,
 				2177B090277A0B910074D1AA /* ContentModel.swift in Sources */,
+				219269C3277CCB7B00EBB812 /* RectangleCard.swift in Sources */,
 				2177B096277A13840074D1AA /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

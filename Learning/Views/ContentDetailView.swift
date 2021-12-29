@@ -38,17 +38,10 @@ struct ContentDetailView: View {
                 } label: {
                     
                     ZStack {
-                        
-                        Rectangle()
-                            .foregroundColor(.green)
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
-                            .frame(height:48)
-                        
+                        RectangleCard(height: 48, color: Color.green)
                         Text("Next Lesson \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
                             .foregroundColor(.white)
                             .bold()
-                            
                     }
                 }
             }
@@ -59,17 +52,10 @@ struct ContentDetailView: View {
                 } label: {
                     
                     ZStack {
-                        
-                        Rectangle()
-                            .foregroundColor(.green)
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
-                            .frame(height:48)
-                        
+                        RectangleCard(height: 48, color: Color.green)
                         Text("Complete")
                             .foregroundColor(.white)
                             .bold()
-                            
                     }
                 }
             }
