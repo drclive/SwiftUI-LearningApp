@@ -52,6 +52,27 @@ struct ContentDetailView: View {
                     }
                 }
             }
+            else{
+                //Next Lesson Button
+                Button {
+                    model.currentContentSelected = nil
+                } label: {
+                    
+                    ZStack {
+                        
+                        Rectangle()
+                            .foregroundColor(.green)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                            .frame(height:48)
+                        
+                        Text("Complete")
+                            .foregroundColor(.white)
+                            .bold()
+                            
+                    }
+                }
+            }
         }.padding()
             .navigationTitle(lesson?.title ?? "")
     }
