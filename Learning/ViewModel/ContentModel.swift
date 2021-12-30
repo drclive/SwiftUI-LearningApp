@@ -19,10 +19,15 @@ class ContentModel: ObservableObject{
     @Published var currentLesson: Lesson?
     var currentLessonIndex = 0
     
+    //Current question
+    @Published var currentQuestion: Question?
+    var currentQuestionIndex = 0
+    
     var styleData: Data?
     
     //Current selected content and text
     @Published var currentContentSelected:Int?
+    @Published var currentTestSelected:Int?
 
     init(){
         getLocalData()
@@ -82,6 +87,19 @@ class ContentModel: ObservableObject{
         }
         //Set the current module
         currentModule = modules[currentModuleIndex]
+    }
+    
+    func beginTest(_ moduleid:Int){
+        
+        beginModule(moduleid)
+        
+        currentQuestionIndex = 0
+        
+        if currentModule?.test.questions.count ?? 0 > 0 {
+            currentQuestion = currentModule!.test.questions[currentQuestionIndex]
+            //lessonDescription = addStyling(currentQuestion!.content)
+        }
+        
     }
     
     func beginLesson(_ LessonIndex:Int){

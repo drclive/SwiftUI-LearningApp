@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomeViewMine: View {
     
     //List of modules
     @EnvironmentObject  var model:ContentModel
@@ -73,9 +73,9 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct HomeViewMine_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeViewMine()
             .environmentObject(ContentModel())
     }
 }
